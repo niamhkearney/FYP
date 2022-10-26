@@ -1,7 +1,7 @@
 <?php
 require_once "header.php";
 ?>
-<div class="container">
+<div class="p-4 container">
     <h1 class="text-center">Welcome!</h1>
     <p class="text-center">Let's just pretend there's an image here..</p>
 </div>
