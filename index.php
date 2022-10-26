@@ -10,7 +10,8 @@ require_once "header.php";
         <button type="button" class="btn btn-primary btn-lg">Draw Now!</button>
     </div>
     <div>
-        <p class="text-center">[Website] is a web application that allows you to draw from your browser on any device!</p>
+        <p class="text-center">[Website] is a web application that allows you to draw from your browser on any device!
+            <br>Press the button above to start!</p>
     </div>
 </div>
 <?php

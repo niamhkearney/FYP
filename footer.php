@@ -1,6 +1,6 @@
 </div>
 <footer>
-    <p>Niamh Kearney 2022</p>
+    <p>Niamh Kearney, 2022</p>
 </footer>
 </div>
 </body>
