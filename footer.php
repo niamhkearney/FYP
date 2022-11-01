@@ -1,7 +1,5 @@
-<div class="p-4 container-fluid">
-<footer>
-        <p class="text-center">Niamh Kearney, 2022</p>
-</footer>
-</div>
+ <footer class="text-center bg-dark">
+     <p class="p-3">Niamh Kearney, 2022</p>
+ </footer>
 </body>
 </html>

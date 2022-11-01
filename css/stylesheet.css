@@ -1,0 +1,24 @@
+
+#main {
+    width: 70%;
+}
+
+.btn {
+    background-color: #7A8C53;
+    color: white;
+    border-color: #2C3E2A;
+
+}
+
+.btn:hover {
+    background-color: #2C3E2A;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+ }
