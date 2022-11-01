@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/stylesheet.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <title>Draw Online</title>
 </head>
 <body>
@@ -26,7 +28,7 @@
                                     <a class="dropdown-item" href="#">Gallery</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="draw_app.php">Draw</a>
+                                    <a class="dropdown-item" href="#">Draw</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">Sign Out</a>
