@@ -1,14 +1,11 @@
 <?php
 require_once "header_draw.php";
 ?>
-
 <div id="main" class="container">
-    <div class=d-grid"">
-       <script src="p5js/sketch.js"></script>
+    <script src="sketch.js"></script>
+    <div id="sketchCanvas" class="p-4 container">
     </div>
+    <button onclick="clearButton()" class="btn">Clear Canvas</button>
 </div>
-
-<?php
-require_once "footer.php";
-?>
-
+</body>
+</html>

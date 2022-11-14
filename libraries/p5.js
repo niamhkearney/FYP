@@ -92891,15 +92891,15 @@
  * @example
  * <div>
  * <code>
- * let string = 'Hello p5js*!';
- * let regexp = 'p5js\\*';
+ * let string = 'Hello libraries*!';
+ * let regexp = 'libraries\\*';
  * let m = match(string, regexp);
  * text(m, 5, 50);
  * </code>
  * </div>
  *
  * @alt
- * "p5js*" displayed middle left of canvas.
+ * "libraries*" displayed middle left of canvas.
  */
         _main.default.prototype.match = function (str, reg) {
           _main.default._validateParameters('match', arguments);
@@ -92931,7 +92931,7 @@
  * @example
  * <div class="norender">
  * <code>
- * let string = 'Hello p5js*! Hello world!';
+ * let string = 'Hello libraries*! Hello world!';
  * let regexp = 'Hello';
  * matchAll(string, regexp);
  * </code>
@@ -100898,7 +100898,7 @@
           };
         }        /**
  * A class to describe a 4×4 matrix
- * for model and view matrix manipulation in the p5js webgl renderer.
+ * for model and view matrix manipulation in the libraries webgl renderer.
  * @class p5.Matrix
  * @private
  * @constructor
@@ -106163,7 +106163,7 @@
                 'readFromUndefined': '\n{{location}} Cannot read property of undefined. Check the line number in error and make sure the variable which is being operated is not undefined.\n\n + More info: {{url}}'
               }
             },
-            'libraryError': '{{location}} An error with message "{{error}}" occurred inside the p5js library when {{func}} was called. If not stated otherwise, it might be an issue with the arguments passed to {{func}}.',
+            'libraryError': '{{location}} An error with message "{{error}}" occurred inside the libraries library when {{func}} was called. If not stated otherwise, it might be an issue with the arguments passed to {{func}}.',
             'location': '[{{file}}, line {{line}}]',
             'misspelling': '{{location}} It seems that you may have accidentally written "{{name}}" instead of "{{actualName}}". Please correct it to {{actualName}} if you wish to use the {{type}} from p5.js.',
             'misspelling_plural': '{{location}} It seems that you may have accidentally written "{{name}}".\nYou may have meant one of the following: \n{{suggestions}}',
@@ -106188,7 +106188,7 @@
               'reservedFunc': 'you have used a p5.js reserved function "{{symbol}}" make sure you change the function name to something else.\n\n+ More info: {{url}}'
             },
             'welcome': 'Welcome! This is your friendly debugger. To turn me off, switch to using p5.min.js.',
-            'wrongPreload': '{{location}} An error with message "{{error}}" occurred inside the p5js library when "{{func}}" was called. If not stated otherwise, it might be due to "{{func}}" being called from preload. Nothing besides load calls (loadImage, loadJSON, loadFont, loadStrings, etc.) should be inside the preload function.'
+            'wrongPreload': '{{location}} An error with message "{{error}}" occurred inside the libraries library when "{{func}}" was called. If not stated otherwise, it might be due to "{{func}}" being called from preload. Nothing besides load calls (loadImage, loadJSON, loadFont, loadStrings, etc.) should be inside the preload function.'
           }
         }
       },
