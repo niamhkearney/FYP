@@ -5,7 +5,10 @@ require_once "header_draw.php";
     <script src="sketch.js"></script>
     <div id="sketchCanvas" class="p-4 container">
     </div>
-    <button onclick="clearButton()" class="btn">Clear Canvas</button>
+    <div class="container p-2">
+        <button onclick="clearButton()" class="btn">Clear Canvas</button>
+        <button onclick="saveButton()" class="btn">Save Image</button>
+    </div>
 </div>
 </body>
 </html>
