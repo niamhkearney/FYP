@@ -1,0 +1,26 @@
+
+#main {
+    width: 70%;
+}
+
+#btn_signup {
+    background-color: dodgerblue;
+    color: white;
+}
+
+#sketchCanvas {
+    vertical-align: top;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
