@@ -17,11 +17,12 @@
 
                 <div class="container">
                     <div class="d-grid">
-                        <button type="button" class="p-3 btn btn-lg">Start Drawing Now!</button>
+                        <a class="btn btn-lg btn-primary" href="{{ route('draw') }}">Start drawing now!
+                        </a>
                     </div>
                     <div>
                         <p class="p-3 text-center">HexSketch is a web application that allows you to draw from your browser on any device!
-                            <br>Press the button above to start!
+                            <br><br>Press the button above to start!
                         </p>
                     </div>
                 </div>

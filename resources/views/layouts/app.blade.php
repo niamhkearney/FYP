@@ -45,12 +45,14 @@
                                     <li>
                                         <a class="dropdown-item" href="#">Profile</a>
                                     </li>
+                                    @if (Route::has('gallery'))
                                     <li>
-                                        <a class="dropdown-item" href="#">Gallery</a>
+                                        <a class="dropdown-item" href="{{ route('gallery') }}">Gallery</a>
                                     </li>
+                                    @endif
                                     @if (Route::has('draw'))
                                     <li>
-                                        <a class="dropdown-item" href="#">Draw</a>
+                                        <a class="dropdown-item" href="{{ route('draw') }}">Draw</a>
                                     </li>
                                     @endif
                                     <li><hr class="dropdown-divider"></li>

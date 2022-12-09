@@ -64,11 +64,31 @@ function randomiseName() {
   return name;
 }
 
+function randomiseFormName() {
+    let name = "u";
+
+    //Adding 9 extra, randomised numbers to the end of the file name
+    for (let i = 0; i < 9; i++) {
+        let x = Math.floor((Math.random() * 9) + 1);
+        name += x;
+    }
+
+    document.getElementById("filename").value = name;
+}
+
 function clearButton() {
   clear();
   background(background_color);
 }
 
 function saveButton() {
-  save(randomiseName() + '.jpg');
+  save('../test' + '.jpg');
+}
+
+function uploadButton() {
+    document.getElementById("uploadForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("uploadForm").style.display = "none";
 }

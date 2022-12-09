@@ -10,5 +10,9 @@
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+
 <!-- Scripts -->
-@vite(['resources/sass/app.scss', 'resources/js/'])
+<script src="{{url('js/p5.js')}}" type="text/javascript"></script>
+<script src="{{url('js/quicksettings.js')}}" type="text/javascript"></script>
+<script src="{{url('js/p5.gui.js')}}" type="text/javascript"></script>
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
