@@ -1,4 +1,4 @@
-
+let drawCanvas;
 new p5();
 
 var stroke_color = '#000000';
@@ -11,7 +11,7 @@ var visible = true;
 var gui;
 
 function setup() {
-  let drawCanvas = createCanvas(600, 500);
+  drawCanvas = createCanvas(600, 500);
   drawCanvas.parent('sketchCanvas');
   background(background_color);
 
@@ -64,31 +64,22 @@ function randomiseName() {
   return name;
 }
 
-function randomiseFormName() {
-    let name = "u";
-
-    //Adding 9 extra, randomised numbers to the end of the file name
-    for (let i = 0; i < 9; i++) {
-        let x = Math.floor((Math.random() * 9) + 1);
-        name += x;
-    }
-
-    document.getElementById("filename").value = name;
-}
-
 function clearButton() {
   clear();
   background(background_color);
 }
 
 function saveButton() {
-  save('../test' + '.jpg');
+  save('myHexSketch' + '.png');
 }
 
 function uploadButton() {
-    document.getElementById("uploadForm").style.display = "block";
+    document.getElementById("uploadForm2").style.display = "block";
 }
 
-function closeForm() {
-    document.getElementById("uploadForm").style.display = "none";
+function submitButt() {
+    console.log("hi");
+    document.getElementById("myIMG").value = drawCanvas.elt.toDataURL('image/png');
+    let form = document.getElementById("uploadForm");
+    form.submit();
 }

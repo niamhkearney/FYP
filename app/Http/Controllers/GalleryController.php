@@ -10,6 +10,8 @@ class GalleryController extends Controller
 {
     public function index()
     {
+
+        //Displaying data from uploads table that has the user's ID
         $userId = Auth::id();
         $uploads = Upload::where('user_id', $userId)->get();
 

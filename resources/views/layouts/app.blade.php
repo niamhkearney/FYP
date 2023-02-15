@@ -43,16 +43,16 @@
 
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a class="dropdown-item" href="#">Profile</a>
+                                        <a class="dropdown-item" href="#">Profile <i class="fa-regular fa-face-smile"></i></a>
                                     </li>
                                     @if (Route::has('gallery'))
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('gallery') }}">Gallery</a>
+                                        <a class="dropdown-item" href="{{ route('gallery') }}">Gallery <i class="fa-regular fa-image"></i></a>
                                     </li>
                                     @endif
                                     @if (Route::has('draw'))
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('draw') }}">Draw</a>
+                                        <a class="dropdown-item" href="{{ route('draw') }}">Draw <i class="fa-solid fa-paintbrush"></i></a>
                                     </li>
                                     @endif
                                     <li><hr class="dropdown-divider"></li>
@@ -61,7 +61,7 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Logout') }} <i class="fa-solid fa-door-open"></i>
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

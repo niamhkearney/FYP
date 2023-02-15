@@ -10,5 +10,7 @@
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+
 <!-- Scripts -->
+<script src="https://kit.fontawesome.com/bd39ac71d1.js" crossorigin="anonymous"></script>
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
