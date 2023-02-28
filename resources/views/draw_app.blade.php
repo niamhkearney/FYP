@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div id="main" class="container">
+<div id="draw-main" class="container">
     <div class="row">
         <div class="col-8 pt-4">
             <script src="{{url('js/sketch.js')}}"></script>
@@ -45,6 +45,8 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <div class="timer"></div>
+            <script src="{{url('js/timer.js')}}"></script>
         </div>
     </div>
     <div class="row pt-4 pb-4">
@@ -55,8 +57,11 @@
         <div class="col">
             <button onclick="uploadButton();randomiseFormName();" class="btn btn-lg btn-success" data-bs-toggle="modal" data-bs-target="#uploadForm2">Upload <i class="fa-solid fa-file-arrow-up"></i></button>
         </div>
+        <p>{{ $imageinfo[0] }}</p>
     </div>
 </div>
+
+{{--upload form--}}
 <div class="modal fade" id="uploadForm2">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -71,10 +76,10 @@
                     <form id='uploadForm' enctype="multipart/form-data" action="{{ route('upload') }}" class="form-container" METHOD="POST">
                         @csrf
                         <label for="title" class="form-label"><b>Title:</b></label>
-                        <input type="text" class="form-control" placeholder="Untitled" name="Untitled" required><br>
+                        <input type="text" id="title" class="form-control" placeholder="Untitled" name="title" required><br>
 
                         <label for="description" class="form-label"><b>Description:</b></label>
-                        <input type="text" class="form-control" placeholder="Enter Description (optional)" name="description">
+                        <input type="text" id="description" class="form-control" placeholder="Enter Description (optional)" name="description">
 
                         <input type="hidden" id="myIMG" name="dataURL" value="none" />
                     </form>
@@ -90,4 +95,5 @@
         </div>
     </div>
 </div>
+
 @endsection

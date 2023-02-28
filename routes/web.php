@@ -25,3 +25,6 @@ Route::get('/draw', [App\Http\Controllers\DrawController::class, 'drawPage'])->n
 Route::post('/upload', [App\Http\Controllers\DrawController::class, 'newUpload'])->name('upload');
 
 Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery');
+
+Route::get('/setup', [App\Http\Controllers\SetupController::class, 'setupPage'])->name('setup');
+Route::post('/form', [App\Http\Controllers\SetupController::class, 'formFilled'])->name('form');
