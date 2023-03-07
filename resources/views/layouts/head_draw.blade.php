@@ -16,6 +16,5 @@
 <script src="{{url('js/p5.js')}}" type="text/javascript"></script>
 <script src="{{url('js/quicksettings.js')}}" type="text/javascript"></script>
 <script src="{{url('js/p5.gui.js')}}" type="text/javascript"></script>
-<script src="{{url('js/refimages.js')}}" type="text/javascript"></script>
 <script src="https://kit.fontawesome.com/bd39ac71d1.js" crossorigin="anonymous"></script>
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +22,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/draw', [App\Http\Controllers\DrawController::class, 'drawPage'])->name('draw');
-Route::post('/upload', [App\Http\Controllers\DrawController::class, 'newUpload'])->name('upload');
+Route::get('/draw', [App\Http\Controllers\DrawController::class, 'drawPage'])->name('draw')->middleware('auth');
+Route::post('/upload', [App\Http\Controllers\DrawController::class, 'newUpload'])->name('upload')->middleware('auth');
 
-Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery');
+Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery')->middleware('auth');
 
-Route::get('/setup', [App\Http\Controllers\SetupController::class, 'setupPage'])->name('setup');
-Route::post('/form', [App\Http\Controllers\SetupController::class, 'formFilled'])->name('form');
+Route::get('/setup', [App\Http\Controllers\SetupController::class, 'setupPage'])->name('setup')->middleware('auth');
+Route::post('/form', [App\Http\Controllers\SetupController::class, 'formFilled'])->name('form')->middleware('auth');

@@ -13,6 +13,7 @@
             </div>
         </div>
         <div class="col-4 pt-4">
+            @if(isset($imageinfo))
             <div id="demo" class="carousel carousel-dark slide" data-bs-interval="false">
 
                 <!-- Indicators/dots -->
@@ -20,18 +21,26 @@
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
                 </div>
 
                 <!-- The slideshow/carousel -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://i.pinimg.com/originals/2a/0d/fc/2a0dfcb716c10ca7610126b5a6906657.jpg" alt="Los Angeles" class="d-block w-100">
+                        <img src="{{ $imageinfo[0] }}" alt="Pixabay Image" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://i.pinimg.com/originals/68/77/b3/6877b3882d4474dd7a01df5237bc0669.jpg" alt="Chicago" class="d-block w-100">
+                        <img src="{{ $imageinfo[1] }}" alt="Pixabay" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://64.media.tumblr.com/f4746901651f779dd864e43dd7b76694/tumblr_ogpbv48Q4q1v5fgk1o4_400.png" alt="New York" class="d-block w-100">
+                        <img src="{{ $imageinfo[2] }}" alt="Pixabay" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ $imageinfo[3] }}" alt="Pixabay" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ $imageinfo[4] }}" alt="Pixabay" class="d-block w-100">
                     </div>
                 </div>
 
@@ -44,9 +53,46 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+
+                <p class="text-center"><i>Images sourced from the Pixabay API</i></p>
             </div>
-            <div class="timer"></div>
-            <script src="{{url('js/timer.js')}}"></script>
+            @endif
+            <div class="timer">
+                <span id="showmns" class="timer__part">00</span><span class="timer__part">:</span><span id="showscs" class="timer__part">00</span>
+                <button type="button" id="btnct" class="timer__btn timer__btn--start" onclick="countdownTimer()">Start</button>
+            <script type="text/javascript">
+                var ctmnts = {{ Js::from($timer['minutes']) }};
+                var ctsecs = {{ Js::from($timer['seconds']) }};
+
+                function countdownTimer() {
+                    // https://coursesweb.net/javascript/
+                    if(ctmnts===0 && ctsecs===0) {
+                        document.getElementById('btnct').removeAttribute('disabled');     // remove "disabled" to enable the button
+
+                        return false;
+                    }
+                    else {
+                        // decrease seconds, and decrease minutes if seconds reach to 0
+                        ctsecs--;
+                        if(ctsecs < 0) {
+                            if(ctmnts > 0) {
+                                ctsecs = 59;
+                                ctmnts--;
+                            }
+                            else {
+                                ctsecs = 0;
+                                ctmnts = 0;
+                            }
+                        }
+                    }
+
+                    // display the time in page, and auto-calls this function after 1 seccond
+                    document.getElementById('showmns').innerHTML = ctmnts;
+                    document.getElementById('showscs').innerHTML = ctsecs;
+                    setTimeout('countdownTimer()', 1000);
+                }
+            </script>
+            </div>
         </div>
     </div>
     <div class="row pt-4 pb-4">
@@ -57,7 +103,6 @@
         <div class="col">
             <button onclick="uploadButton();randomiseFormName();" class="btn btn-lg btn-success" data-bs-toggle="modal" data-bs-target="#uploadForm2">Upload <i class="fa-solid fa-file-arrow-up"></i></button>
         </div>
-        <p>{{ $imageinfo[0] }}</p>
     </div>
 </div>
 

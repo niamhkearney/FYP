@@ -18,14 +18,16 @@ class SetupController extends Controller
 
         $subject = $request->subject;
         $category = $request->category;
-        $timer = $request->timer;
+        $mins = $request->mins;
+        $sec = $request->sec;
 
         //Storing form parameters as session variables if they have not been left blank
         //Subject and Category will be used for the API GET request
 
         Session::put('subject', $subject);
         Session::put('category', $category);
-        Session::put('timer', $timer);
+        Session::put('mins', $mins);
+        Session::put('sec', $sec);
 
         return redirect('draw');
     }
