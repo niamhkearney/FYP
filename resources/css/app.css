@@ -29,6 +29,10 @@ body {
     margin: 0;
 }
 
+canvas {
+    background-color: #707070;
+}
+
 footer {
     left: 0;
     bottom: 0;

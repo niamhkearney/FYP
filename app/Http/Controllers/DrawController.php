@@ -40,8 +40,13 @@ class DrawController extends Controller
 
                 $data = json_decode($response, true);
 
-                foreach ($data['hits'] as $elem) {
-                    $values[] = $elem['webformatURL'];
+                if($data['total'] != 0) {
+                    foreach ($data['hits'] as $elem) {
+                        $values[] = $elem['webformatURL'];
+                    }
+                }
+                else {
+                    $values = 0;
                 }
 
                 return view('draw_app', ['imageinfo' => $values], ['timer' => ['minutes' => $mins, 'seconds' => $sec]]);

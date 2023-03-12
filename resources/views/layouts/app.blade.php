@@ -47,12 +47,12 @@
                                     </li>
                                     @if (Route::has('gallery'))
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('gallery') }}">Gallery <i class="fa-regular fa-image"></i></a>
+                                        <a class="dropdown-item" href="{{ route('gallery') }}">My Gallery <i class="fa-regular fa-image"></i></a>
                                     </li>
                                     @endif
                                     @if (Route::has('draw'))
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('draw') }}">Draw <i class="fa-solid fa-paintbrush"></i></a>
+                                        <a class="dropdown-item" href="{{ route('setup') }}">Draw <i class="fa-solid fa-paintbrush"></i></a>
                                     </li>
                                     @endif
                                     <li><hr class="dropdown-divider"></li>
