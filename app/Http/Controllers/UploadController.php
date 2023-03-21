@@ -44,4 +44,12 @@ class UploadController extends Controller
 
         return back();
     }
+
+    public function deleteUpload(Request $request) {
+
+        $deleted = Upload::where('upload_id', $request->delete_uploadid)->delete();
+
+        return redirect('gallery' . '/' . Auth::id());
+
+    }
 }

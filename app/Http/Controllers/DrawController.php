@@ -87,7 +87,7 @@ class DrawController extends Controller
             $userId = Auth::id();
             $upload->user_id = $userId;
             $upload->save();
-            return redirect('gallery');
+            return redirect('gallery' . '/' . Auth::id());
         }
 
         return redirect('home');

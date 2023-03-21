@@ -7,17 +7,18 @@
 @section('content')
 <div id="main" class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h1 class="text-center">Welcome!</h1>
+        <div class="text-center">
+            <img src="{{ asset('extra/logo_v2.png') }}" class="rounded mx-auto d-block" alt="Website logo image" >
+            <h1 class="pb-2">Welcome!</h1>
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                 @endif
 
-                <div class="container">
+                <div class="col-md-8 container">
                     <div class="d-grid">
-                        <a class="btn btn-lg btn-primary" href="{{ route('setup') }}">Start drawing now!
+                        <a class="btn btn-lg btn-primary" href="{{ route('setup') }}">Start Drawing
                         </a>
                     </div>
                     <div>

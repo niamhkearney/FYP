@@ -5,10 +5,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="#">
+                   <img src="{{ asset('extra/logo2.png') }}" alt="HexSketch logo" width="206" height="42.75">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -37,17 +37,17 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a class="dropdown-item" href="#">Profile <i class="fa-regular fa-face-smile"></i></a>
+                                        <a class="dropdown-item" href="{{ route('profile', Auth::user()->id) }}">Profile <i class="fa-regular fa-face-smile"></i></a>
                                     </li>
                                     @if (Route::has('gallery'))
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('gallery') }}">My Gallery <i class="fa-regular fa-image"></i></a>
+                                        <a class="dropdown-item" href="{{ route('gallery', Auth::user()->id) }}">My Gallery <i class="fa-regular fa-image"></i></a>
                                     </li>
                                     @endif
                                     @if (Route::has('draw'))

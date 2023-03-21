@@ -6,12 +6,17 @@
 
 @section('content')
 <div id="main" class="container">
-    <h2>Gallery</h2>
-    @foreach($uploads as $upload)
-    <div class="pt-4 container">
-        <a href="/posts/{{ $upload->upload_id }}" target="_blank"><img src="{{ asset($upload->path)}}" alt="Submission: {{ $upload->title }}"></a>
-        <h4>{{ $upload->title }}</h4> <br> {{$upload->description}} <br> {{$upload->created_at}}
+    <div class="p-3 text-center">
+        <h2>{{ $username }}'s Gallery</h2>
+        <div class="pt-4 container">
+            <div class="row row-cols-2">
+            @foreach($uploads as $upload)
+            <div class="col">
+                <a href="/posts/{{ $upload->upload_id }}" target="_blank"><img src="{{ asset($upload->path)}}" alt="Submission: {{ $upload->title }}" width="300" height="250"></a>
+                <h4 class="pb-4">{{ $upload->title }}</h4>
+            </div>
+            @endforeach
+        </div>
     </div>
-    @endforeach
 </div>
 @endsection

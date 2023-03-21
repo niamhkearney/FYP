@@ -9,7 +9,7 @@
 <div id="main" class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h2 class="text-center">Before you draw.. Set up your canvas!</h2>
+            <h2 class="text-center pt-5">Before you draw.. Set up your canvas!</h2>
             <p class="text-center">Real-life subjects are more likely to return results. Also, if both category and subject are left blank, no reference images will be displayed.</p>
             <p class="text-center">If no value is entered for the timer, the timer will be not activated.</p>
             <form class="form-container" action="{{ route('form') }}" METHOD="POST">

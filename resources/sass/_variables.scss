@@ -1,7 +1,13 @@
 // Body
-$body-bg: #f8fafc;
+$body-bg: rgba(55, 51, 59);
+$body-bg2: #1c1b1f;
+$input-color: white;
+$input-bg: white;
+$input-placeholder-color: grey;
+$form-select-color: grey;
+$primary: #772B86;
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
+    // Typography
+$font-family-sans-serif: 'Acme', sans-serif;
+$font-size-base: 1rem;
 $line-height-base: 1.6;
