@@ -26,6 +26,7 @@ class DrawController extends Controller
         }
         else {
             if($subject != "" || $subject != NULL) {
+                $subject = str_replace(" ", "+", $subject);
                 $subject = 'q=' . $subject . '&';
             }
 

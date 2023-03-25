@@ -15,7 +15,7 @@
             <form class="form-container" action="{{ route('form') }}" METHOD="POST">
                 @csrf
                 <label for="subject" class="form-label"><b>Subject:</b></label>
-                <input type="text" id="subject" class="form-control" placeholder="e.g Yellow Flowers" name="subject" value=""><br>
+                <input type="text" id="subject" class="form-control" placeholder="e.g Yellow Flowers" name="subject" value="" maxlength="100"><br>
 
                 <label for="category" class="form-label"><b>Choose a category:</b></label>
                 <select class="form-select" name="category" aria-label="Default select example">
@@ -28,17 +28,14 @@
                     <option value="food">Food</option>
                 </select><br>
 
-{{--                <label for="timer" class="form-label"><b>Enter number of minutes for timer:</b></label>--}}
-{{--                <input type="number" id="timer" class="form-control" placeholder="e.g 6" name="timer"><br>--}}
-
                 <div class="row">
                     <div class="col">
                         <label for="mins" class="form-label"><b>Enter number of minutes for timer:</b></label>
-                        <input type="number" id="mins" class="form-control" placeholder="Minutes" value="0" name="mins">
+                        <input type="number" id="mins" class="form-control" placeholder="Minutes" value="0" name="mins" maxlength="2">
                     </div>
                     <div class="col">
                         <label for="sec" class="form-label"><b>Enter number of seconds for timer:</b></label>
-                        <input type="number" id="sec" class="form-control" placeholder="Seconds" value="0" name="sec"><br>
+                        <input type="number" id="sec" class="form-control" placeholder="Seconds" value="0" name="sec" maxlength="2"><br>
                     </div>
                 </div>
 

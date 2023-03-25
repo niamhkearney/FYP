@@ -14,55 +14,35 @@
             </div>
             <div class="col-4 pt-4">
                 @if(isset($imageinfo) && $imageinfo != 0)
-                    <div id="demo" class="carousel carousel-dark slide" data-bs-interval="false">
+                    <div id="api_images" class="carousel carousel-dark slide" data-bs-interval="false">
 
                         <!-- Indicators/dots -->
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+                            <button type="button" data-bs-target="#api_images" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#api_images" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#api_images" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#api_images" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#api_images" data-bs-slide-to="4"></button>
                         </div>
 
                         <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ $imageinfo[0] }}" alt="Pixabay Image" class="d-block w-100">
+                            <div class="carousel-item active">
+                                <img src="{{ $imageinfo[0] }}" alt="Pixabay Image" class="d-block w-100">
+                            </div>
+                            @if(count($imageinfo) > 1)
+                                @for($i = 1; $i < 4; $i++)
+                                    <div class="carousel-item">
+                                        <img src="{{ $imageinfo[$i] }}" alt="Pixabay" class="d-block w-100">
+                                    </div>
+                                @endfor
+                            @endif
                         </div>
-                        @if(count($imageinfo) > 1)
-                            @for($i = 1; $i < 4; $i++)
-                                <div class="carousel-item">
-                                    <img src="{{ $imageinfo[$i] }}" alt="Pixabay" class="d-block w-100">
-                                </div>
-                            @endfor
-                        @endif
-                        </div>
-
-{{--                        <!-- The slideshow/carousel -->--}}
-{{--                        <div class="carousel-inner">--}}
-{{--                            <div class="carousel-item active">--}}
-{{--                                <img src="{{ $imageinfo[0] }}" alt="Pixabay Image" class="d-block w-100">--}}
-{{--                            </div>--}}
-{{--                            <div class="carousel-item">--}}
-{{--                                <img src="{{ $imageinfo[1] }}" alt="Pixabay" class="d-block w-100">--}}
-{{--                            </div>--}}
-{{--                            <div class="carousel-item">--}}
-{{--                                <img src="{{ $imageinfo[2] }}" alt="Pixabay" class="d-block w-100">--}}
-{{--                            </div>--}}
-{{--                            <div class="carousel-item">--}}
-{{--                                <img src="{{ $imageinfo[3] }}" alt="Pixabay" class="d-block w-100">--}}
-{{--                            </div>--}}
-{{--                            <div class="carousel-item">--}}
-{{--                                <img src="{{ $imageinfo[4] }}" alt="Pixabay" class="d-block w-100">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
                         <!-- Left and right controls/icons -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#api_images" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#api_images" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -71,9 +51,11 @@
                     </div>
                 @endif
                 @if(isset($imageinfo) && $imageinfo === 0)
-                    <h4>Unfortunately, the keywords and/or categories you entered returned no results.</h4>
-                    <p>Try returning to the setup form and using different keywords.</p>
-                    <a class="btn btn-info" href="{{ route('setup') }}"><i class="fa-solid fa-arrow-left"></i> Back to Setup</a>
+                    <div id="api_err" class="pb-3">
+                        <h4>Unfortunately, the keywords and/or categories you entered returned no results.</h4>
+                        <p>Try returning to the setup form and using different keywords.</p>
+                        <a class="btn btn-info" href="{{ route('setup') }}"><i class="fa-solid fa-arrow-left"></i> Back to Setup</a>
+                    </div>
                 @endif
                 @if($timer['minutes'] && ($timer['seconds']) !== null)
                     <div class="timer">
@@ -85,6 +67,15 @@
                         <script type="text/javascript">
                             var ctmnts = {{ Js::from($timer['minutes']) }};
                             var ctsecs = {{ Js::from($timer['seconds']) }};
+
+                            document.getElementById("showmns").textContent= ctmnts;
+
+                            if (ctsecs < 10) {
+                                document.getElementById("showscs").textContent= "0" + ctsecs;
+                            }
+                            else {
+                                document.getElementById("showscs").textContent= ctsecs;
+                            }
 
                             function countdownTimer() {
                                 // Source: https://coursesweb.net/javascript/
@@ -113,7 +104,13 @@
 
                                 // display the time in page, and auto-calls this function after 1 seccond
                                 document.getElementById('showmns').innerHTML = ctmnts;
-                                document.getElementById('showscs').innerHTML = ctsecs;
+
+                                if (ctsecs < 10) {
+                                    document.getElementById('showscs').innerHTML = "0" + ctsecs;
+                                }
+                                else {
+                                    document.getElementById('showscs').innerHTML = ctsecs;
+                                }
                                 setTimeout('countdownTimer()', 1000);
                             }
                         </script>
@@ -125,7 +122,7 @@
             <div class="col">
                 <button onclick="clearButton()" class="btn btn-lg btn-danger">Clear Canvas <i
                         class="fa-solid fa-skull"></i></button>
-                <button onclick="saveButton()" class="btn btn-lg btn-primary">Save to Device <i
+                <button onclick="saveButton()" class="btn btn-lg btn-info">Save to Device <i
                         class="fa-solid fa-download"></i></button>
             </div>
             <div class="col">

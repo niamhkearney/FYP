@@ -14,12 +14,21 @@
     padding-left: 15%;
 }
 
+
+#api_images {
+    color: white;
+}
+
 #right {
     background-color: #2d3748;
 }
 
 #sketchCanvas {
     vertical-align: top;
+}
+
+#api_err {
+    color: white;
 }
 
 /* The popup form for uploads - hidden by default */
@@ -34,10 +43,14 @@
     background-color: #0e0d0d !important;
 }
 
+.card {
+    background-color: #0e0d0d !important;
+}
+
 body {
     padding: 0;
     margin: 0;
-    background-image: linear-gradient(#1c1b1f, #37333BFF);
+    background-image: linear-gradient(#201c2c, #37333BFF);
 }
 
 canvas {
