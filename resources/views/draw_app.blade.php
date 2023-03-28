@@ -78,7 +78,7 @@
                             }
 
                             function countdownTimer() {
-                                // Source: https://coursesweb.net/javascript/
+                                // Source: https://coursesweb.net/javascript/countdown-timer-starting-time-added-form_s2
                                 if (ctmnts === 0 && ctsecs === 0) {
                                     document.getElementById('btnct').removeAttribute('disabled');     // remove "disabled" to enable the button
 
@@ -126,7 +126,7 @@
                         class="fa-solid fa-download"></i></button>
             </div>
             <div class="col">
-                <button onclick="uploadButton();" class="btn btn-lg btn-success"
+                <button class="btn btn-lg btn-success"
                         data-bs-toggle="modal" data-bs-target="#uploadForm2">Upload <i
                         class="fa-solid fa-file-arrow-up"></i>
                 </button>
@@ -147,14 +147,15 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <form id='uploadForm' enctype="multipart/form-data" action="{{ route('upload') }}"
-                          class="form-container" METHOD="POST">
+                          class="form-container needs-validation" METHOD="POST" novalidate>
                         @csrf
                         <label for="title" class="form-label"><b>Title:</b></label>
-                        <input type="text" id="title" class="form-control" placeholder="Untitled" name="title" required><br>
+                        <input type="text" id="title" class="form-control" placeholder="Untitled" name="title" required />
+                        <div class="invalid-feedback">Please write a title.</div><br>
 
                         <label for="description" class="form-label"><b>Description:</b></label>
                         <input type="text" id="description" class="form-control"
-                               placeholder="Enter Description (optional)" name="description">
+                               placeholder="Enter Description (optional)" name="description"/>
 
                         <input type="hidden" id="myIMG" name="dataURL" value="none"/>
                     </form>

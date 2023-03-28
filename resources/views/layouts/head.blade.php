@@ -12,5 +12,6 @@
 
 
 <!-- Scripts -->
+<script src="{{url('js/validation.js')}}" type="text/javascript"></script>
 <script src="https://kit.fontawesome.com/bd39ac71d1.js" crossorigin="anonymous"></script>
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])

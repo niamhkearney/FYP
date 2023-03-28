@@ -13,36 +13,41 @@
             {{$upload->description}} @else <p><i>No Description</i></p> @endif <br>
             <p>By <b>{{ $user }}</b> at {{$upload->created_at}}</p>
             @if($upload->user_id === Auth::id())
-                <form action="{{ route('delete_upload') }}" METHOD="POST">
+                <form id="delete_upload" action="{{ route('delete_upload') }}" METHOD="POST">
                     @csrf
                     <input type="hidden" name="delete_uploadid" value="{{$upload->upload_id}}"/>
-                    <button type="submit" name="delete_button" class="btn btn-danger" value="Delete">Delete Picture</button>
+                    <button type="button" onclick="check_delete();" name="delete_button" class="btn btn-danger" value="Delete">Delete Picture</button>
                 </form>
             @endif
         </div>
         <hr>
         <div id="comments_section">
             <h3><b>Comments</b></h3>
-            <div id="comment" class="pb-4">
-                @if(isset($comments))
+            <div id="comment">
+                @if(count($comments))
                     @foreach($comments as $comment)
-                        <b>{{ $comment->name }}</b> - {{ $comment->created_at }} <br>
-                        {{ $comment->message }}
+                        <p class="p-2">
+                        <b>{{ $comment->name }}</b> - <i>{{ $comment->created_at }}</i> <br>
+                        {{ $comment->message }} </p>
                     @endforeach
                 @else
-                    <p><i>No comments... yet!</i></p>
+                    <p class ="p-2"><i>No comments... yet!</i></p>
                 @endif
             </div>
         </div>
         <hr>
 {{--        Make a comment--}}
         <div class="mb-3 pb-5">
-            <form action="{{ route('post_comment') }}" METHOD="POST">
+            <form id="comment_form" action="{{ route('post_comment') }}" class="needs-validation" METHOD="POST" novalidate>
                 @csrf
                 <label for="message" class="form-label">Comment on this drawing:</label>
-                <textarea class="form-control pb-2" id="message" name="message" maxlength="255" rows="3" required></textarea><br>
+                <textarea class="form-control pb-2" id="message" name="message" minlength="2" maxlength="255" rows="3" required ></textarea>
+                <div class="invalid-feedback">
+                    Comments must have at least 2 characters!
+                </div>
+                <br>
                 <input type="hidden" name="uploadId" value="{{$upload->upload_id}}"/>
-                <button type="submit" name="submit_button" class="btn btn-primary" value="Submit">Submit</button>
+                <button type="button" onclick="empty_comment();" name="submit_button" class="btn btn-primary" value="Submit">Submit</button>
             </form>
         </div>
     </div>

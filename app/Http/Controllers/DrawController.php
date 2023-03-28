@@ -34,7 +34,8 @@ class DrawController extends Controller
                 $category = 'category=' . $category . '&';
             }
 
-            $getpicture = 'https://pixabay.com/api/?key=33669290-6e1b0c759f42b1ad905af4988&' . $subject . $category . 'image_type=photo&safesearch=true&per_page=5';
+            $getpicture = 'https://pixabay.com/api/?key=33669290-6e1b0c759f42b1ad905af4988&' . $subject . $category
+                . 'image_type=photo&safesearch=true&per_page=5';
 
             $response = Http::acceptJson()->get($getpicture);
             if ($response->successful()) {
