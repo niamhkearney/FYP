@@ -1,0 +1,102 @@
+
+#main {
+    width: 70%;
+    color: #0e0d0d;
+    background-color: #b3abb7;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #c3bbc7;
+    border-radius: 5px;
+    background-image: linear-gradient(#b3abb7, #dbd3e1);
+}
+
+#draw-main {
+    padding-left: 20%;
+    padding-right: 5%;
+}
+
+
+#api_images {
+    color: white;
+}
+
+#right {
+    background-color: #2d3748;
+}
+
+#sketchCanvas {
+    vertical-align: top;
+}
+
+#api_err {
+    color: white;
+}
+
+/* The popup form for uploads - hidden by default */
+.form-popup {
+    display: none;
+    position: static;
+    bottom: 0;
+    z-index: 9;
+}
+
+.navbar-dark {
+    background-color: #0e0d0d !important;
+}
+
+.card {
+    background-color: #0e0d0d !important;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(#201c2c, #37333BFF);
+}
+
+canvas {
+    background-color: #707070;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+form input {
+    background-color: white;
+}
+
+/*Timer CSS*/
+
+.timer {
+    font-family: sans-serif;
+    display: inline-block;
+    padding: 24px 32px;
+    border-radius: 30px;
+    background: white;
+}
+
+.timer_part {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.timer_btn {
+    width: 50px;
+    height: 50px;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background: #8208e6;
+    cursor: pointer;
+}
+
+.timer_btn_start {
+    background: #00b84c;
+}
+
