@@ -26,7 +26,7 @@ function setup() {
   sliderRange(1, 100, 1);
   gui.addGlobals('stroke_weight');
   // gui.addGlobals('layer');
-  gui.setPosition(50, 100);
+  gui.setPosition(5, 100);
 }
 
 function draw() {

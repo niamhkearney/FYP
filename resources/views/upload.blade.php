@@ -7,7 +7,7 @@
 @section('content')
     <div id="main" class="container text-center">
         <div id="post_info">
-            <img src="{{ asset($upload->path)}}" alt="Submission: {{ $upload->title }}" class="p-4">
+            <img src="{{ asset($upload->path)}}" alt="Submission: {{ $upload->title }}" class=" img-fluid p-4">
             <h4><b>{{ $upload->title }}</b></h4> <br>
             @if(isset($upload->description))
             {{$upload->description}} @else <p><i>No Description</i></p> @endif <br>

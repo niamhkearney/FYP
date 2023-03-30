@@ -8,7 +8,7 @@
 <div id="main" class="container">
     <div class="row justify-content-center">
         <div class="text-center">
-            <img src="{{ asset('extra/logo_v2.png') }}" class="rounded mx-auto d-block" alt="Website logo image" >
+            <img src="{{ asset('extra/logo_v2.png') }}" class="img-fluid" alt="Website logo image" >
             <h1 class="pb-2">Welcome!</h1>
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">

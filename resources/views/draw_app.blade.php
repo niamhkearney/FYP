@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div id="draw-main" class="container">
+    <div id="draw-main" >
         <div class="row">
             <div class="col-8 pt-4">
                 <script src="{{url('js/sketch.js')}}"></script>
@@ -27,12 +27,12 @@
 
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{ $imageinfo[0] }}" alt="Pixabay Image" class="d-block w-100">
+                                <img src="{{ $imageinfo[0] }}" alt="Pixabay Image" class="d-block w-100 img-fluid">
                             </div>
                             @if(count($imageinfo) > 1)
                                 @for($i = 1; $i < 4; $i++)
                                     <div class="carousel-item">
-                                        <img src="{{ $imageinfo[$i] }}" alt="Pixabay" class="d-block w-100">
+                                        <img src="{{ $imageinfo[$i] }}" alt="Pixabay" class="d-block w-100 img-fluid">
                                     </div>
                                 @endfor
                             @endif
@@ -59,9 +59,9 @@
                 @endif
                 @if($timer['minutes'] && ($timer['seconds']) !== null)
                     <div class="timer">
-                        <span id="showmns" class="timer__part">00</span><span class="timer__part">:</span><span
-                            id="showscs" class="timer__part">00</span>
-                        <button type="button" id="btnct" class="timer__btn timer__btn--start"
+                        <span id="showmns" class="timer_part">00</span><span class="timer_part">:</span><span
+                            id="showscs" class="timer_part">00</span>
+                        <button type="button" id="btnct" class="timer__btn timer_btn_start"
                                 onclick="countdownTimer()">Start
                         </button>
                         <script type="text/javascript">

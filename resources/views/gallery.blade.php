@@ -12,7 +12,7 @@
             <div class="row row-cols-2">
             @foreach($uploads as $upload)
             <div class="col">
-                <a href="/posts/{{ $upload->upload_id }}" target="_blank"><img src="{{ asset($upload->path)}}" alt="Submission: {{ $upload->title }}" width="300" height="250"></a>
+                <a href="/posts/{{ $upload->upload_id }}" target="_blank"><img src="{{ asset($upload->path)}}" class="img-fluid" alt="Submission: {{ $upload->title }}" width="300" height="250"></a>
                 <h4 class="pb-4">{{ $upload->title }}</h4>
             </div>
             @endforeach
